@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MenuHub BD - Explore Menus</title>
+  <link rel="stylesheet"
+  href="menustyle.css" />
+</head>
+
+<body>
+
+  <header>
+    <div class="brand-title">
+      <h1>MenuHub BD</h1>
+      <p>Explore Restaurant Menus</p>
+    </div>
+    <a href="index.html" class="nav-link">🏠 Home</a>
+  </header>
+
+
+  <section class="search-section">
+    <h2>Find Your Favorite Spot</h2>
+    
+    <div class="search-container">
+      <span class="location-icon">📍</span>
+      <select id="divisionSelect" class="division-dropdown" onchange="filterRestaurants()">
+        <option value="all" selected>All Divisions</option>
+        <option value="ctg">Chittagong (CTG)</option>
+        <option value="dhaka">Dhaka</option>
+        <option value="sylhet">Sylhet</option>
+        <option value="rajshahi">Rajshahi</option>
+        <option value="khulna">Khulna</option>
+        <option value="barishal">Barishal</option>
+        <option value="rangpur">Rangpur</option>
+        <option value="mymensingh">Mymensingh</option>
+      </select>
+
+      <div class="search-divider"></div>
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search restaurant name..." oninput="filterRestaurants()">
+    </div>
+  </section>
+
+
+  <main class="restaurant-grid">
+
+    <div class="restaurant-card" data-division="ctg">
+      <div class="card-info">
+        <h3>Guilty Pleasure</h3>
+        <span class="tag-area">📍 Khulshi / CTG</span>
+        <p><strong>Cuisine:</strong> Desserts & Continental</p>
+      </div>
+      <button class="btn-menu" onclick="openMenu('guiltypleasure')">View Menu 📜</button>
+    </div>
+
+    <div class="restaurant-card" data-division="ctg">
+      <div class="card-info">
+        <h3>The Eatalia</h3>
+        <span class="tag-area">📍 Jamal Khan / CTG</span>
+        <p><strong>Cuisine:</strong> Italian & Pasta</p>
+      </div>
+      <button class="btn-menu" onclick="openMenu('eatalia')">View Menu 📜</button>
+    </div>
+
+    <div class="restaurant-card" data-division="ctg">
+      <div class="card-info">
+        <h3>Galleria</h3>
+        <span class="tag-area">📍 Foy's Lake / CTG</span>
+        <p><strong>Cuisine:</strong> Cafe & Continental</p>
+      </div>
+      <button class="btn-menu" onclick="openMenu('galleria')">View Menu 📜</button>
+    </div>
+
+    <div class="restaurant-card" data-division="ctg">
+      <div class="card-info">
+        <h3>Pizzaburg</h3>
+        <span class="tag-area">📍 GEC / CTG</span>
+        <p><strong>Cuisine:</strong> Pizza & Fast Food</p>
+      </div>
+      <button class="btn-menu" onclick="openMenu('pizzaburg')">View Menu 📜</button>
+    </div>
+
+    <div class="restaurant-card" data-division="ctg">
+      <div class="card-info">
+        <h3>Zen Table</h3>
+        <span class="tag-area">📍 Jamal Khan / CTG</span>
+        <p><strong>Cuisine:</strong> Asian Fusion</p>
+      </div>
+      <button class="btn-menu" onclick="openMenu('zentable')">View Menu 📜</button>
+    </div>
+
+    <div class="restaurant-card" data-division="ctg">
+      <div class="card-info">
+        <h3>Terracotta</h3>
+        <span class="tag-area">📍 Zakir Hossain Road / CTG</span>
+        <p><strong>Cuisine:</strong> Multi-Cuisine</p>
+      </div>
+      <button class="btn-menu" onclick="openMenu('terracotta')">View Menu 📜</button>
+    </div>
+
+    <div class="restaurant-card" data-division="dhaka">
+  <div class="card-info">
+    <h3>Khao San</h3>
+    <span class="tag-area">📍 Banani / Dhaka</span>
+    <p><strong>Cuisine:</strong> Thai Street Food</p>
+  </div>
+  <button class="btn-menu" onclick="openMenu('khaosan')">View Menu 📜</button>
+</div>
+
+<div class="restaurant-card" data-division="dhaka">
+  <div class="card-info">
+    <h3>Madchef</h3>
+    <span class="tag-area">📍 Dhanmondi / Dhaka</span>
+    <p><strong>Cuisine:</strong> Gourmet Burgers & Fast Food</p>
+  </div>
+  <button class="btn-menu" onclick="openMenu('madchef')">View Menu 📜</button>
+</div>
+
+<div class="restaurant-card" data-division="dhaka">
+  <div class="card-info">
+    <h3>Koi Thé</h3>
+    <span class="tag-area">📍 Gulshan / Dhaka</span>
+    <p><strong>Cuisine:</strong> Bubble Tea & Beverages</p>
+  </div>
+  <button class="btn-menu" onclick="openMenu('koithe')">View Menu 📜</button>
+</div>
+
+<div class="restaurant-card" data-division="dhaka">
+  <div class="card-info">
+    <h3>Herfy</h3>
+    <span class="tag-area">📍 Gulshan / Dhaka</span>
+    <p><strong>Cuisine:</strong> Fast Food & Burgers</p>
+  </div>
+  <button class="btn-menu" onclick="openMenu('herfy')">View Menu 📜</button>
+</div>
+
+<div class="restaurant-card" data-division="dhaka">
+  <div class="card-info">
+    <h3>Lahori Kitchen</h3>
+    <span class="tag-area">📍 Uttara / Dhaka</span>
+    <p><strong>Cuisine:</strong> Pakistani & Mughlai</p>
+  </div>
+  <button class="btn-menu" onclick="openMenu('lahorikitchen')">View Menu 📜</button>
+</div>
+
+<div class="restaurant-card" data-division="dhaka">
+  <div class="card-info">
+    <h3>Digger</h3>
+    <span class="tag-area">📍 Banani / Dhaka</span>
+    <p><strong>Cuisine:</strong> Continental & Cafe</p>
+  </div>
+  <button class="btn-menu" onclick="openMenu('digger')">View Menu 📜</button>
+</div>
+
+  </main>
+
+
+
+  <footer>
+    <a href="homepage.html" class="nav-link">⬅ Back to Home</a>
+  </footer>
+
+
+  <div id="menuModal" class="modal-overlay">
+    <div class="modal-card">
+      <span class="close-btn" onclick="closeMenu()">&times;</span>
+      <h2 id="modalTitle">Restaurant Name</h2>
+      <p id="modalLocation" class="location-sub">Location</p>
+      
+      <div class="menu-slider-container">
+        <img id="menuImg" src="" alt="Menu Page" class="menu-page-img">
+
+        <div class="slider-controls">
+          <button id="prevBtn" class="btn-slide" onclick="changeSlide(-1)">&lt; Prev</button>
+          <span id="pageIndicator" class="page-indicator">Page 1 of 1</span>
+          <button id="nextBtn" class="btn-slide" onclick="changeSlide(1)">Next &gt;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script src="menuscript.js"></script>
+
+</body>
+</html>
